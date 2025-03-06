@@ -1,13 +1,17 @@
 import { DataTable, When } from '@badeball/cypress-cucumber-preprocessor';
 
 import { PseudoSelector } from '../constants';
-import { When_I_find_element_by_label_text } from '../queries';
+import {
+  When_I_find_element_by_label_text,
+  When_I_find_element_by_title,
+} from '../queries';
 import {
   camelCase,
   getButtonElements,
   getCypressElement,
   getLinkElements,
   getOptions,
+  getTestIdElements,
 } from '../utils';
 
 /**
@@ -16,6 +20,8 @@ import {
  * ```gherkin
  * When I click
  * ```
+ *
+ * Clicks on the element found in the previous step.
  *
  * Alternative:
  *
@@ -72,6 +78,8 @@ When('I click', When_I_click);
  * ```gherkin
  * When I click {string}
  * ```
+ *
+ * Clicks on the position of the element found in the previous step.
  *
  * You can click on 9 specific positions of an element:
  *
@@ -154,6 +162,8 @@ When('I click {string}', When_I_click_position);
  * When I click {int}px and {int}px
  * ```
  *
+ * Clicks on the x-y coordinates of the element found in the previous step.
+ *
  * @example
  *
  * ```gherkin
@@ -208,7 +218,7 @@ When('I click {int}px and {int}px', When_I_click_x_y_coordinates);
  * When I click on button {string}
  * ```
  *
- * If multiple buttons are found, it will click on the first one.
+ * Clicks on the first button with the matching text.
  *
  * @example
  *
@@ -254,7 +264,7 @@ When('I click on button {string}', When_I_click_on_button);
  * When I click on link {string}
  * ```
  *
- * If multiple links are found, it will click on the first one.
+ * Clicks on the first link with the matching text.
  *
  * @example
  *
@@ -299,6 +309,8 @@ When('I click on link {string}', When_I_click_on_link);
  * ```gherkin
  * When I click on text {string}
  * ```
+ *
+ * Clicks on the first element with the matching text.
  *
  * Alternative:
  *
@@ -349,6 +361,8 @@ When('I click on text {string}', When_I_click_on_text);
  * When I click on label {string}
  * ```
  *
+ * Clicks on the first label with the matching text.
+ *
  * @example
  *
  * ```gherkin
@@ -372,6 +386,7 @@ When('I click on text {string}', When_I_click_on_text);
  *   | timeout | 4000 |
  *   | waitForAnimations | true |
  *   | withinSubject | null |
+ *   | pseudoSelector | visible |
  * ```
  *
  * @see
@@ -380,7 +395,106 @@ When('I click on text {string}', When_I_click_on_text);
  */
 export function When_I_click_on_label(text: string, options?: DataTable) {
   When_I_find_element_by_label_text(text, options);
-  getCypressElement().click(getOptions(options));
+  When_I_click(options);
 }
 
 When('I click on label {string}', When_I_click_on_label);
+
+/**
+ * When I click on test ID:
+ *
+ * ```gherkin
+ * When I click on test ID {string}
+ * ```
+ *
+ * Clicks on the first element with the matching `data-testid` or `data-test-id` attribute:
+ *
+ * ```html
+ * <div data-testid="test"></div>
+ * <div data-test-id="test"></div>
+ * ```
+ *
+ * _Use this only if the other actions don't work. `data-testid` or `data-test-id` don't resemble how your software is used and should be avoided if possible._
+ *
+ * @example
+ *
+ * ```gherkin
+ * When I click on test ID "testID"
+ * ```
+ *
+ * With options:
+ *
+ * ```gherkin
+ * When I click on test ID "testID"
+ *   | altKey | false |
+ *   | animationDistanceThreshold | 5 |
+ *   | ctrlKey | false |
+ *   | force | false |
+ *   | includeShadowDom | false |
+ *   | log | true |
+ *   | metaKey | false |
+ *   | multiple | false |
+ *   | scrollBehavior | top |
+ *   | shiftKey | false |
+ *   | timeout | 4000 |
+ *   | waitForAnimations | true |
+ *   | withinSubject | null |
+ * ```
+ *
+ * @see
+ *
+ * - {@link When_I_click_on_text | When I click on text}
+ */
+export function When_I_click_on_testid(testId: string, options?: DataTable) {
+  getTestIdElements(testId, PseudoSelector.visible, options)
+    .first()
+    .click(getOptions(options));
+}
+
+When('I click on test ID {string}', When_I_click_on_testid);
+
+/**
+ * When I click on title:
+ *
+ * ```gherkin
+ * When I click on title {string}
+ * ```
+ *
+ * Clicks on the first element with the matching title.
+ *
+ * @example
+ *
+ * ```gherkin
+ * When I click on title "Title"
+ * ```
+ *
+ * With options:
+ *
+ * ```gherkin
+ * When I click on title "Title"
+ *   | altKey | false |
+ *   | animationDistanceThreshold | 5 |
+ *   | ctrlKey | false |
+ *   | force | false |
+ *   | includeShadowDom | false |
+ *   | log | true |
+ *   | metaKey | false |
+ *   | multiple | false |
+ *   | scrollBehavior | top |
+ *   | shiftKey | false |
+ *   | timeout | 4000 |
+ *   | waitForAnimations | true |
+ *   | withinSubject | null |
+ *   | pseudoSelector | visible |
+ * ```
+ *
+ * @see
+ *
+ * - {@link When_I_click_on_text | When I click on text}
+ */
+export function When_I_click_on_title(text: string, options?: DataTable) {
+  When_I_find_element_by_title(text, options);
+  When_I_click(options);
+}
+
+When('I click on title {string}', When_I_click_on_title);

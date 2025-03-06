@@ -1,5 +1,70 @@
 # Changelog
 
+## [3.63.0](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.62.0...v3.63.0) (2024-11-30)
+
+
+### Features
+
+* **actions:** add "When I click on title" ([f3637b1](https://github.com/remarkablemark/cypress-cucumber-steps/commit/f3637b1e6b1194222caa7fb09c6bdd1636958d67))
+* **queries:** add "When I find elements by title" ([74c24bd](https://github.com/remarkablemark/cypress-cucumber-steps/commit/74c24bdd94950329c32eff95679474b6a071d81b))
+
+## [3.62.0](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.61.1...v3.62.0) (2024-11-03)
+
+
+### Features
+
+* pass options to label assertions and queries ([a7ec38b](https://github.com/remarkablemark/cypress-cucumber-steps/commit/a7ec38bc79265f160dbec882a782255122f6045a))
+
+## [3.61.1](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.61.0...v3.61.1) (2024-08-29)
+
+
+### Continuous Integration
+
+* **github:** publish package to npm registry with provenance ([cbdcb02](https://github.com/remarkablemark/cypress-cucumber-steps/commit/cbdcb020a006c69ef846804fcaf9f271fcdb7043))
+
+## [3.61.0](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.60.0...v3.61.0) (2024-07-21)
+
+
+### Features
+
+* **assertions:** add "Then I see test ID" & "Then I do not see test ID" ([9c971d7](https://github.com/remarkablemark/cypress-cucumber-steps/commit/9c971d79a6468174ea9e768dbe7e10097f374a88))
+
+## [3.60.0](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.59.0...v3.60.0) (2024-07-14)
+
+
+### Features
+
+* **actions:** add "When I click on test ID" ([cea6fc1](https://github.com/remarkablemark/cypress-cucumber-steps/commit/cea6fc158ca353cc3162149fd214a5bdc5961139))
+* **queries:** pass options to testid ([f8ba3b9](https://github.com/remarkablemark/cypress-cucumber-steps/commit/f8ba3b99255fbcb9a3c54324392d39f7063bb122))
+
+## [3.59.0](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.58.0...v3.59.0) (2024-02-03)
+
+
+### Features
+
+* **assertions:** add "Then I see pathname" & "Then I see pathname contains" ([6a64b96](https://github.com/remarkablemark/cypress-cucumber-steps/commit/6a64b967268e2a3e6973ca6cb3372c626a20ed99))
+
+## [3.58.0](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.57.0...v3.58.0) (2024-02-03)
+
+
+### Features
+
+* **assertions:** add "Then I see location" ([2099ce9](https://github.com/remarkablemark/cypress-cucumber-steps/commit/2099ce93989f71abf07941514f99f35600d7359a))
+
+## [3.57.0](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.56.0...v3.57.0) (2024-02-03)
+
+
+### Features
+
+* **assertions:** pass options to hash steps ([2b6fd4d](https://github.com/remarkablemark/cypress-cucumber-steps/commit/2b6fd4d0a85e5b6ea38ae24bc4ee0b16a1e6fd5d))
+
+## [3.56.0](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.55.0...v3.56.0) (2024-02-03)
+
+
+### Features
+
+* **assertions:** add "Then I see search" & "Then I see search contains" ([f0810cd](https://github.com/remarkablemark/cypress-cucumber-steps/commit/f0810cdaadb3cbad7b61c213a53d6ca8b94c8f9b))
+
 ## [3.55.0](https://github.com/remarkablemark/cypress-cucumber-steps/compare/v3.54.0...v3.55.0) (2024-01-05)
 
 

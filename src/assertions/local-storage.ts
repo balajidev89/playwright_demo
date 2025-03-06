@@ -22,6 +22,7 @@ import { Then } from '@badeball/cypress-cucumber-preprocessor';
  */
 export function Then_I_see_local_storage_item(key: string) {
   cy.wrap({}).should(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     expect(localStorage.getItem(key)).to.exist;
   });
 }
@@ -87,7 +88,7 @@ export function Then_I_see_local_storage_item_contains(
   value: string,
 ) {
   cy.wrap({}).should(() => {
-    expect(localStorage.getItem(key)).to.include(value);
+    expect(localStorage.getItem(key)).to.contain(value);
   });
 }
 
@@ -117,6 +118,7 @@ Then(
  */
 export function Then_I_do_not_see_local_storage_item(key: string) {
   cy.wrap({}).should(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
     expect(localStorage.getItem(key)).to.not.exist;
   });
 }

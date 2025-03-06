@@ -1,6 +1,16 @@
 {
-  "entryPoints": ["src"],
-  "plugin": ["typedoc-plugin-copy-code-to-clipboard"],
   "cacheBust": true,
-  "gaID": "G-2NYQESPF9Y"
+  "entryPoints": ["src"],
+  "highlightLanguages": [
+    "css",
+    "gherkin",
+    "html",
+    "javascript",
+    "json",
+    "json5",
+    "jsonc",
+    "shellscript",
+    "tsx",
+    "typescript"
+  ]
 }
